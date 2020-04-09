@@ -1,0 +1,17 @@
+
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+	<meta charset="UTF-8"> 
+	<title>PDS</title> 
+</head> 
+<body>
+
+	<form method = "POST" action="upload_file" enctype="multipart/form-data"> 
+		{% csrf_token %} 
+		<input type="file"  name="imagefile" accept="image/*" />
+		<button type="submit">Upload Image</button> 
+	</form> 
+
+</body> 
+</html> 

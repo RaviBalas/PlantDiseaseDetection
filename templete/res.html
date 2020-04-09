@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+       legend {
+  display: block;
+  border-bottom: 1px solid red;
+  margin-bottom: 50px;
+}
+   </style>
+</head>
+<body>
+    
+</body>
+</html>
+{% for name, age in result.items %}
+<fieldset>
+    <legend>{{name}}</legend>
+    {{age}}
+   </fieldset>
+<p>
+
+   {% endfor %}
