@@ -14,6 +14,7 @@ def SaveProfile(request):
                         return_data.update(jsonsolution(predict_fun()))
             return render(request, 'res.html',{'result':return_data} )
     except Exception as e:
+        print("\n++VIEWS.SAVEPROFILE ",str(e),"++\n")
         return {    "error" : str(e),     "message" : "sucess",   }
 
 
@@ -32,7 +33,7 @@ def __index__function(request):
 
 @api_view(['POST','GET'])
 def predict_plant_disease(request):
-    print("+++++++++++++++++++++++++++++++++++++++ in predict_plant_disease")
+    print("++++++++++++++ in predict_plant_disease")
     try:
         if request.method == "GET" :    return_data = {    "error" : "0",    "message" : "Plant Disease Detection [GET REQ] "    }
         else:
@@ -46,8 +47,9 @@ def predict_plant_disease(request):
             else :  
                     return_data = {    "error" : "1",     "message" : "Request Body is empty",           }
     except Exception as e:
-                    return_data = {    "error" : "3",     "message" : f"Error : {str(e)}",        }
-    print("\n+++++++++++++++++++++++++++++++++++"+str(return_data)+"+++++++++\n")
+                    print("\n++VIEWS.PREDICT_PLANT_DISEASE ",str(e),"++\n")
+                    return_data = {    "error" : "3",     "message" : f"Errorcv : {str(e)}",        }
+    print("\n++++++++++++"+str(return_data)+"+++++++++\n")
     return HttpResponse(json.dumps(return_data), content_type='application/json; charset=utf-8')
 def index(request) :
     print("+++++++++++++++++++++++=+++++++++Rendring view+++++++++++++++++++++++++++++++")
