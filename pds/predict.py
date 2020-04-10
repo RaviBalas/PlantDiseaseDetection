@@ -44,7 +44,7 @@ def predict_fun():
             images = np.vstack([x])
             classes = model.predict(images)
             x=(list(classes[0])).index(1)
-            os.remove('media/temp.jpg')
+            # os.remove('media/temp.jpg')
             return str(x)
     except Exception as e:
         print("\n++PREDICT.PREDICT_FUN ",str(e),"++\n")
