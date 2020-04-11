@@ -23,7 +23,11 @@ def jsonsolution(label):
                 return {"message":"not found"}
         labelfile    =json.load(open('label.json','r'))
         Solution_file=json.load(open('English_solution.json','r'))
+        print("LABEL=",label)
+        print("LABELFILE=",labelfile[label])
+        print("Solutionfile=",Solution_file[labelfile[label]])
         return Solution_file[labelfile[label]]
+        
     except Exception as e:
         print("\n++PREDICT.JSONSOLUTION ",str(e),"++\n")
 

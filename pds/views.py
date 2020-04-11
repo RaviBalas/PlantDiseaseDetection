@@ -48,7 +48,7 @@ def predict_plant_disease(request):
                     return_data = {    "error" : "1",     "message" : "Request Body is empty",           }
     except Exception as e:
                     print("\n++VIEWS.PREDICT_PLANT_DISEASE ",str(e),"++\n")
-                    return_data = {    "error" : "3",     "message" : f"Error : {str(e.__traceback__())}",        }
+                    return_data = {    "error" : "3",     "message" : f"Error : {str(e)}",        }
     print("\n++++++++++++"+str(return_data)+"+++++++++\n")
     return HttpResponse(json.dumps(return_data), content_type='application/json; charset=utf-8')
 def index(request) :
