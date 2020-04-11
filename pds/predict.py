@@ -22,7 +22,6 @@ def jsonsolution(label):
                 return {"message":"not found"}
         labelfile    =json.load(open('label.json','r'))
         Solution_file=json.load(open('English_solution.json','r'))
-        os.remove('media/temp.jpg')
         return Solution_file[labelfile[label]]
     except Exception as e:
         print("\n++PREDICT.JSONSOLUTION ",str(e),"++\n")
@@ -45,7 +44,6 @@ def predict_fun():
             images = np.vstack([x])
             classes = model.predict(images)
             x=(list(classes[0])).index(1)
-            
             return str(x)
     except Exception as e:
         print("\n++PREDICT.PREDICT_FUN ",str(e),"++\n")
