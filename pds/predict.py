@@ -10,10 +10,10 @@ import numpy as np
 # from keras.preprocessing.image import img_to_array
 def handle_uploaded_file(f):
     try:
-    	os.remove('media/temp.jpg')
+        os.remove('media/temp.jpg')
         with open("media/temp.jpg", 'wb+') as destination:
             for chunk in f.chunks():
-                    destination.write(chunk)
+                destination.write(chunk)
     except Exception as e:
         print("\n++PREDICT.HANDLE_UPLOADED_FILE ",str(e),"++\n")
     
@@ -30,10 +30,10 @@ def jsonsolution(label):
 
 def handle_RestApi_File(image_data):
     try:
-    	os.remove('media/temp.jpg')
+        os.remove('media/temp.jpg')
         x="{}".join(image_data ).encode()
         with open("media/temp.jpg", "wb+") as fh:
-            fh.write(base64.decodebytes(x))
+                fh.write(base64.decodebytes(x))
     except Exception as e:
         print("\n++PREDICT.HANDLE_RESTAPIFILE ",str(e),"++\n")
     
