@@ -22,11 +22,11 @@ def jsonsolution(label):
         if label==403:
                 return {"message":"not found"}
         labelfile    =json.load(open('label.json','r'))
-        Solution_file=json.load(open('English_solution.json','r'))
-        print("LABEL=",label)
-        print("LABELFILE=",labelfile[label])
-        print("Solutionfile=",Solution_file[labelfile[label]])
-        return Solution_file[labelfile[label]]
+        en_Solution_file=json.load(open('En_solution.json','r'))
+        gu_Solution_file=json.load(open('Gu_solution.json','r'))
+        x=en_Solution_file[labelfile[label]]
+        x.update(dict((" "+i,j) for i,j in gu_Solution_file[labelfile[label]].items()))
+        return x
         
     except Exception as e:
         print("\n++PREDICT.JSONSOLUTION ",str(e),"++\n")
