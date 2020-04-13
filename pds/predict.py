@@ -25,7 +25,7 @@ def jsonsolution(label):
         en_Solution_file=json.load(open('En_solution.json','r'))
         gu_Solution_file=json.load(open('Gu_solution.json','r'))
         x=en_Solution_file[labelfile[label]]
-        x.update(dict((" "+i,j) for i,j in gu_Solution_file[labelfile[label]].items()))
+        x.update(dict(("_"+i,j) for i,j in gu_Solution_file[labelfile[label]].items()))
         return x
         
     except Exception as e:
