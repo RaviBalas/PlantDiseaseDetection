@@ -10,8 +10,8 @@ def SaveProfile(request):
     try:
             if request.method == "POST":
                         handle_uploaded_file(request.FILES['imagefile']) 
-                        return_data = {    "error" : "0",     "message" : "sucess",   }
-                        return_data.update(jsonsolution(predict_fun()))
+                        # return_data = {    "error" : "0",     "message" : "sucess",   }
+                        return_data = jsonsolution(predict_fun())
             return render(request, 'res.html',{'result':return_data} )
     except Exception as e:
         print("\n++VIEWS.SAVEPROFILE ",str(e),"++\n")

@@ -15,11 +15,12 @@
     
 </body>
 </html>
-{% for name, age in result.items %}
+{% for i, j in result.items %}
+{%  if j  %}
 <fieldset>
-    <legend>{{name}}</legend>
-    {{age}}
+    <legend><b>{{i}}</b></legend>
+    {{j}}
    </fieldset>
 <p>
-
-   {% endfor %}
+{% endif  %}
+   {% endfor %}}
