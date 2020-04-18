@@ -1,4 +1,12 @@
-
+<script>
+	function validateForm() {
+	  var x = document.forms["myForm"]["imagefile"].value;
+	  if (x == "") {
+		alert("plese select image");
+		return false;
+	  }
+	}
+	</script>
 <!DOCTYPE html> 
 <html lang="en"> 
 	{%   load static %}
@@ -15,7 +23,8 @@
 	<div class="container">		
 		<div class="content">	
 		<div class="box">
-		<form method = "POST" action="upload_file" enctype="multipart/form-data"> 
+		
+			<form method = "POST" 	name="myForm" onsubmit="return validateForm()" action="upload_file" enctype="multipart/form-data"> 
 			{% csrf_token %} 
 			<input type="file"  name="imagefile" accept="image/*" />
 			<button type="submit">Upload Image</button> 
