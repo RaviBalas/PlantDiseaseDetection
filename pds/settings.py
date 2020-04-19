@@ -26,7 +26,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '1kcrw3z17$6(b^d=^w-0q+afka*9#4yn6@ao8n9p6c@i5&vi%%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+
 
 ALLOWED_HOSTS = ['tomatopds.herokuapp.com','tomatopds']
 
